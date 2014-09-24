@@ -233,20 +233,6 @@ article.content code {
 	white-space: pre;
 }
 
-article.content pre {
-	display: block;
-	overflow: auto;
-	height: auto;
-	max-width: 100%;
-	max-height: 40em;
-	padding-left: 2em;
-	margin-bottom: 5px;
-}
-
-article.content pre code {
-	line-height: 1em;
-}
-
 article.content p {
 	margin-bottom: 5px;
 }
