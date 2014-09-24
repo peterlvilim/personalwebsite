@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Peter Vilim - Projects</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="pv.css">
+		<link rel="shortcut icon" href="favicon.ico">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39932925-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+		
+	</head>
+    <body>
+        <div id="Whole">
+            <div id="Mwrapper">
+                <div id="MainContent">
+                    <header>
+                    <h1>RadTrac</h1>
+                    </header>
+
+                    <article class="content">
+                    <h1>Overview</h1> 
+					<p class="tab">
+					RadTrac is a system for detecting and tracking radioactive dirty bombs that could potentially be employed by terrorists.  It was developed using Department of Energy funding.  The system is built on sophisticated proprietary sensors, a networked camera, commercially available networking equipment, and a central computer for processing.   The system is capable of tracking a shielded radioactive source, displaying it on a 2D map, and showing the source on a camera video feed.
+					</p>
+					<h1>Description</h1> 
+					<p class="tab">
+					My primary role was lead programmer.  I was responsible for over 90% of the code base for TradTrac.  In addition, I had several other roles on the project including purchasing hardware and performing lab testing.  The program provided an end-to-end solution for tracking radioactive sources.  Some of the major features of the code are highlighted below.
+					</p>
+					<p class="tab">
+					I was responsible for creating the primary data collection system.  This covered a utility for setting up, configuring, and locating the various sensors.  The sensors were interfaced to the primary computer over an Ethernet network.  I wrote all of the code for collecting the data.  This included support for two different sensor types.  One type was a documented commercial system that used USB (encapsulated and forwarded over TCP/IP).  The other system was a proprietary DOE serial detector that was undocumented.  I reverse engineered that sensor and developed a number of special modifications to the program so that both sensors could be used in an interchangeable and transparent fashion while leveraging their separate advantages.
+					</p>
+					<div class="image">
+					<img style="width:90%;display:block; margin-left: auto;margin-right: auto" src="radtrac_config.png"></img>
+					<div class="caption" >Detector configuration screen</div>
+					</div>
+					<p class="tab">
+					I also developed the camera tracking system.  The camera video feed was displayed in an embeddable ActiveX object that I developed.  The object retrieved and displayed a motion JPEG stream.  I developed two methods of camera tracking.  The first method took as an input the location of the radioactive source from the signal processing algorithms and rotated the camera to point at that location.  The second method did not move the camera but instead drew a crosshairs on the screen to point at the specific location of the radioactive source.  I also developed and implemented a brute force search algorithm to automatically detect the camera position.  The algorithm took as inputs the positions of three sensors (already known to the program) and the associated pan and tilt info when the camera was pointed at those sensors.  The output was the 3D coordinate of the camera.
+					</p>
+					<div class="image">
+					<img style="width:90%;display:block; margin-left: auto;margin-right: auto" src="radtrac_main.png"></img>
+					<div class="caption" >Main tracking screen</div>
+					</div>
+					<p class="tab">
+					I developed the code for tracking the radioactive sources.  This code linked the input data to the tracking algorithms.  The tracking algorithms were required to execute within a one-second interval.  In order to accomplish this they were multi-threaded.  The C++ code allowed for the tracking algorithms to be written in Matlab.  The C++ code interfaced inputs and outputs to the Matlab code and ran the Matlab scripts in parallel.  The support for Matlab code allowed for rapid prototyping by engineers not familiar with C++ and the use of offline testing.
+					</p>
+					<div class="image">
+					<img style="width:90%;display:block; margin-left: auto;margin-right: auto" src="radtrac_camera.png"></img>
+					<div class="caption" >Camera setup screen</div>
+					</div>
+					<h1>Technology</h1>
+					<ul>
+					<li>Code base in C++ with  Microsoft MFC for graphical interface</li>
+					<li>High performance multi-threading to enable real time detection and tracking</li>
+					<li>Cutting edge signal processing algorithms for source tracking and camera setup</li>
+					<li>Matlab with C++ interface for signal processing</li>
+					<li>Interface code to support two detector types (USB and RS 232 over Ethernet)</li>
+					<li>Sockets for camera control and video streaming</li>
+					<li>National Instruments visualization library</li>
+					</ul>
+					</article>
+                </div>
+            </div>
+            <div id="Swrapper">
+                <nav>
+                <ul>
+<li><h1></h1>
+<ul>
+	<li><a href="index.html" title="Peter Vilim">Main</a></li>
+	<li><a href="about.html" title="About Me">About Me</a></li>
+	<li><a href="contact.html" title="Contact">Contact</a></li>
+	<li><a href="Resume - P. Vilim.pdf" title="Resume">Resume (PDF)</a></li>
+</ul>
+</li>
+<li><h1>Projects</h1>
+<ul>
+	<li class="current"><a href="radtrac.html" title="RadTrac">RadTrac</a></li>
+        <li><a href="bigdata.html" title="Big Data Visualization">Big Data Visualization</a></li>
+	<li><a href="shippingmanager.html" title="Shipping Manager">Shipping Manager</a></li>
+	<li><a href="evidencebox.html" title="Evidence Box">Evidence Box</a></li>
+	<li><a href="others.html" title="Others">Others...</a></li>
+</ul>
+</li>
+<li><h1>External</h1>
+<ul>
+	<li><a target="_blank" href="https://github.com/peterlvilim" title="GitHub: peterlvilim">GitHub</a></li>
+	<li><a target="_blank" href="http://www.linkedin.com/pub/peter-vilim/1a/467/750" title="LinkedIn: peter-vilim">LinkedIn</a></li>
+        <li><a target="_blank" href="http://blog.delphix.com/amerriweather/2014/09/09/takeaways-summer-engineering-internship-delphix/" title="LinkedIn: peter-vilim">Delphix Blog</a></li>
+</ul>
+</li></ul>
+                </nav>
+            </div>
+
+            <footer>
+            <a href="index.html">Peter Vilim</a> - <a href="contact.html">Contact</a> - 
+            <a href="about.html">About Me</a> - <a href="radtrac.html">Projects</a>
+            </footer>
+        </div>
+    
+
+</body></html>

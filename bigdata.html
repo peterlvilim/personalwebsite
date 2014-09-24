@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Peter Vilim - Projects</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="pv.css">
+		<link rel="shortcut icon" href="favicon.ico">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39932925-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+		
+	</head>
+    <body>
+        <div id="Whole">
+            <div id="Mwrapper">
+                <div id="MainContent">
+                    <header>
+                    <h1>Big Data Visualization</h1>
+                    </header>
+
+                    <article class="content">
+                    <h1>Overview</h1> 
+					<p class="tab">
+This was an experimental project to explore the possibility of interactively visualizing data stored in a Hadoop Distributed File System (HDFS).  The data used for the project was 12GB of ad metrics (26 million lines) stored in CSV format on a single node HDFS system.  The objective was to create a system which could allow the user to get a general visual sense of the data and explore the data further to find interesting characteristics.
+</p>
+					<h1>Visualization Components</h1> 
+					<p class="tab">
+					Interactive visualizations should allow the user to explore the visualized data.  For this project
+the parallel coordinates visualization method was chosen since it scales well to n dimensional data.  Support was added to allow the user to select part of one of the axes and filter the data to only include those points.  This effectively "zooms" in on an area of interest.</p>
+					<h1>Big Data Backend</h1>
+					<p class="tab">
+The underlying data was stored in HDFS as previously mentioned.  Jobs were executed via the Spark framework as opposed to the typical Map Reduce framework.  Spark allows for jobs to be specified in arbitrary acyclic graph fashion as opposed to the simpler Map Reduce framework which allows for greater control and often faster run times.  The HIVE meta-data store was used to project SQL structure onto the data and allow for simpler queries.  An extension to HIVE called Shark was used which optimizes HIVE and supports in memory caching to improve performance for similar queries.  Finally BlinkDB was used to perform data sampling.  BlinkDB was critical to the success of this application.  BlinkDB supports SHARK queries that have a sampling parameter to allow returning only a sampled subset of the data.  This means that when a user is zoomed out from the data the user only needs to see a small sample of the data to get a general idea of how the data is organized.  As the user zooms into the selected data the sampling factor is increased with bounds added to match the selected zoom area.
+</p>
+					<h1>Front End</h1>
+					<p class="tab">
+The results of the BlinkDB queries are sent to front end components using the Apache Thrift protocol.  The front end performs clustering on the results to reduce the data output to something that can be easily visualized.  Finally the front end component leverages D3.js to display the results to the user and allows the user to interact with the results and make further queries.
+</p>
+					<h1>Demo</h1>
+					<p class="tab">
+					A demo video of the working system is embedded below.  In this video I demonstrate the ability to select several columns to load, visualizing these results, and then zooming in on several areas of interest to demonstrate the ability to explore the data.  The data shown in this video has been anonymized.
+<div class="image">
+<video controls style="width:100%;display:block;margin-left:auto;margin-right:auto">
+<source src="bigdata.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+					</p>
+					<h1>Technology</h1>
+<div class="image"><img style="width:90%;display:block;margin-left: auto;margin-right:auto" src="bigdata.png"></img>
+ <div class="caption" >Technology Stack Components</div>
+</div>
+<h1>Underlying Research</h1>
+There were several papers referenced in the construction of this system.
+<br>
+<ul>
+<li><a href="http://www.cs.berkeley.edu/~sameerag/blinkdb_eurosys13.pdf">BlinkDB: Queries with Bounded Errors and Bounded Response Times on Very Large Data</a></li>
+<li><a href="http://www.cs.berkeley.edu/~matei/papers/2013/sigmod_shark.pdf">Shark: SQL and Rich Analytics at Scale</a></li>
+<li><a href="http://www.cs.berkeley.edu/~matei/papers/2010/hotcloud_spark.pdf">Spark: Cluster Computing with Working Sets</a></li>
+</ul>
+					</article>
+                </div>
+            </div>
+            <div id="Swrapper">
+                <nav>
+                <ul>
+<li><h1></h1>
+<ul>
+	<li><a href="index.html" title="Peter Vilim">Main</a></li>
+	<li><a href="about.html" title="About Me">About Me</a></li>
+	<li><a href="contact.html" title="Contact">Contact</a></li>
+	<li><a href="Resume - P. Vilim.pdf" title="Resume">Resume (PDF)</a></li>
+</ul>
+</li>
+<li><h1>Projects</h1>
+<ul>
+	<li><a href="radtrac.html" title="RadTrac">RadTrac</a></li>
+        <li class="current"><a href="bigdata.html" title="Big Data Visualization">Big Data Visualization</a></li>
+	<li><a href="shippingmanager.html" title="Shipping Manager">Shipping Manager</a></li>
+	<li><a href="evidencebox.html" title="Evidence Box">Evidence Box</a></li>
+	<li><a href="others.html" title="Others">Others...</a></li>
+</ul>
+</li>
+<li><h1>External</h1>
+<ul>
+	<li><a target="_blank" href="https://github.com/peterlvilim" title="GitHub: peterlvilim">GitHub</a></li>
+	<li><a target="_blank" href="http://www.linkedin.com/pub/peter-vilim/1a/467/750" title="LinkedIn: peter-vilim">LinkedIn</a></li>
+        <li><a target="_blank" href="http://blog.delphix.com/amerriweather/2014/09/09/takeaways-summer-engineering-internship-delphix/" title="LinkedIn: peter-vilim">Delphix Blog</a></li>
+</ul>
+</li></ul>
+                </nav>
+            </div>
+
+            <footer>
+            <a href="index.html">Peter Vilim</a> - <a href="Contact.html">Contact</a> - 
+            <a href="about.html">About Me</a> - <a href="radtrac.html">Projects</a>
+            </footer>
+        </div>
+    
+
+</body></html>
