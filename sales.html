@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Peter Vilim - Projects</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="pv.css">
+		<link rel="shortcut icon" href="favicon.ico">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39932925-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+		
+	</head>
+    <body>
+        <div id="Whole">
+            <div id="Mwrapper">
+                <div id="MainContent">
+                    <header>
+                    <h1>Sales Analytics</h1>
+                    </header>
+
+                    <article class="content">
+                    <h1>Overview</h1> 
+					<p class="tab">
+                                        This was a hackathon project that won the audience award for best project at the second Delphix hackathon of the year in October 2015.  For my hackathon project that also won the audience award at the first hackathon in March 2015 and went on to be a full time open source project see <a href="plugin.html">Delphix Jenkins Plugin</a>.<br><br>The purpose of this project was to experiment with tools that could help improve predictability in sales forecasting.  Sales forecasting relies upon numerous inputs including data stored in Salesfore about the status of the deal pipelines as well as the subjective opinions of sales management.  This project provided several methods for visualizing data stored in Salesforce to analyze previous sales results.
+</p>
+					<h1>Data management</h1> 
+					<p class="tab">
+                                        Data stored in Salesforce contains such information as the state of the deal at various points in time (there are 6 phases to every deal leading up to either winning or losting the deal), value of the deal, associated company, what product is being sold for the deal, and many other data points.  Previous to this project this data had been manually pulled down in Excel sheets and then cleaned up by hand to make it uniform and complete.  This project automated the pull down of the data via the Salesforce API then used Python with Pandas and set of rules to cleanup the data.
+					<h1>Visualization</h1>
+					<p class="tab">
+                                        The best way to understand data is to visualize it.  Thousands of numbers can be impenitrable but become instantly understandable when graphed.  For this visualization the state of deals is shown by customer on a timeline.  The state of the deals at different points in time are characterized by the color on the timeline with deals ending in a checkmark if they were successful, red X if they were not, and otherwise still in progress.  A deal on the timeline can be hovered in order to bring up additional information about it.  Since there are so many deals a few filters are provided.  The data on the timeline can be filtered by fiscal year and deal type (new customer or renewal).  Each quarter of the fiscal year has a funnel that shows the state of deals as the progress from there initial stage (all deals) through the deal pipline until the final state of closed.  Clicking a funnel filters the timeline to show only deals for that quarter.  This method of visualization with progressive drill down helps users to quickly understand the data and gain insights that wouldn't be possible by looking at tens of thousands of rows of Excel.
+                    <div class="image">
+                    <img style="width:90%;display:block; margin-left: auto;margin-right: auto" src="sales.png"></img>
+                    <div class="caption" >Deal pipeline visualization</div>
+                    </div>
+
+</p>
+					</p>
+					<h1>Technology</h1>
+                                        <p class="tab">
+                                        <ul>
+                                        <li>Python with Pandas for data parsing on the backend</li>
+                                        <li>D3.js for visualization</li>
+                                        </ul>
+                                        </p>
+
+					</article>
+                </div>
+            </div>
+            <div id="Swrapper">
+                <nav>
+                <ul>
+<li><h1></h1>
+<ul>
+	<li><a href="index.html" title="Peter Vilim">Main</a></li>
+	<li><a href="about.html" title="About Me">About Me</a></li>
+	<li><a href="contact.html" title="Contact">Contact</a></li>
+	<li><a href="Resume - P. Vilim.pdf" title="Resume">Resume (PDF)</a></li>
+</ul>
+</li>
+<li><h1>Projects</h1>
+<ul>
+	<li class="current"><a href="sales.html" title="Sales Analytics">Sales Analytics</a></li>
+	<li><a href="plugin.html" title="Delphix Jenkins Plugin">Delphix Jenkins Plugin</a></li>
+	<li><a href="radtrac.html" title="RadTrac">RadTrac</a></li>
+        <li ><a href="bigdata.html" title="Big Data Visualization">Big Data Visualization</a></li>
+	<li><a href="shippingmanager.html" title="Shipping Manager">Shipping Manager</a></li>
+	<li><a href="evidencebox.html" title="Evidence Box">Evidence Box</a></li>
+	<li><a href="others.html" title="Others">Others...</a></li>
+</ul>
+</li>
+<li><h1>External</h1>
+<ul>
+	<li><a target="_blank" href="https://github.com/peterlvilim" title="GitHub: peterlvilim">GitHub</a></li>
+	<li><a target="_blank" href="http://www.linkedin.com/pub/peter-vilim/1a/467/750" title="LinkedIn: peter-vilim">LinkedIn</a></li>
+        <li><a target="_blank" href="https://youtu.be/pXQ-SRwUdY4" title="JUC East 2015">Jenkins User Conference 2015 Talk</a></li>
+</ul>
+<li><h1>Blogs</h1>
+    <ul>
+        <li><a target="_blank" href="http://blog.delphix.com/peter-villim/2015/10/16/first-customer-support-escalation" title="Escalation blog">Customer Escalation Blog</a></li>
+        <li><a target="_blank" href="http://blog.delphix.com/peter-villim/2015/05/08/my-first-engineering-kickoff-at-delphix-hackathon/" title="Hackathon blog">Hackathon Blog</a></li>
+        <li><a target="_blank" href="http://blog.delphix.com/amerriweather/2014/09/09/takeaways-summer-engineering-internship-delphix/" title="Internship blog">Delpihx Internship Blog</a></li>
+    </ul>
+</li></ul>
+                </nav>
+            </div>
+
+        </div>
+    
+
+</body></html>
